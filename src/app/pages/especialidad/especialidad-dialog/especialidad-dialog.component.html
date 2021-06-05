@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Especialidad</h1>
+<form id="form" [formGroup]="form" #formEspecialidad = "ngForm" (ngSubmit)="operar()">
+    <div mat-dialog-content>
+        <div [hidden]="true">
+            <mat-form-field>
+                <input matInput formControlName="idEspecialidad">
+            </mat-form-field>            
+        </div>        
+        <mat-form-field>
+            <mat-label>Especialidad</mat-label>
+            <input matInput placeholder="Especialidad" formControlName="descEspecialidad" autocomplete="off"
+            required>
+        </mat-form-field>       
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]='form.invalid'>Guardar</button>
+        <button mat-raised-button color="accent" type="button" (click)="cerrarDialog()">Cerrar</button>
+    </div>
+</form>
+

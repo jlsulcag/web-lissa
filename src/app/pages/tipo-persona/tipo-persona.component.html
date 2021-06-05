@@ -1,0 +1,56 @@
+<div class="container">
+    <mat-toolbar>Tipos de Persona</mat-toolbar>
+    <!-- Inicio Habilita El router Link para poder mostrar el formulario de edicion
+    <router-outlet></router-outlet>    
+    Fin Habilita El router Link para poder mostrar el formulario de edicion-->
+    <div class="button-row">
+        <button mat-raised-button color="primary" (click)="openDialogCreate()">Nuevo</button>
+        <!--
+        <button mat-raised-button color="primary" routerLink="/tipopersona/nuevo" class="button-row">Nuevo2</button>
+        -->
+    </div>
+    <!--
+    <mat-form-field class="row">
+        <input matInput placeholder="Buscar Tipo de Persona" (keyup)="aplicarFiltro($event.target.value)">
+    </mat-form-field>
+    -->
+
+    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="idTipoPersona">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.idTipoPersona}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Descripcion</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.descripcion}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="estado">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Estado</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.estado}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <!--
+                <button mat-button color="primary" [routerLink]="['editar', row.idtipopersona]">Editar</button>
+                -->
+                <!-- Dialog editar-->
+                <button mat-icon-button color="primary" (click)="openDialogEdit(row)">
+                    <mat-icon>update</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="eliminar(row.idTipoPersona)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[10,20,30,40,50]"></mat-paginator>
+</div>

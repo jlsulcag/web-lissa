@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Tipo Documento</h1>
+<form [formGroup]="formDialog" #form='ngForm' (ngSubmit)="operar()">
+    <div mat-dialog-content>
+        <div [hidden]='true'>
+            <mat-form-field>
+                <input #txtid matInput placeholder="ID" formControlName="idTipoDocumento">
+            </mat-form-field>
+        </div>
+        <mat-form-field>
+            <input #txtabreviatura matInput placeholder="Sigla" formControlName="abreviatura" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input #txtdescripcion matInput placeholder="Descripcion" formControlName="descripcion" required>
+        </mat-form-field>
+        <div [hidden]='op == 1?true:false'>
+            <mat-slide-toggle color="primary" labelPosition="before" formControlName="estado">Estado</mat-slide-toggle> 
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]='form.invalid'>Guardar</button>
+        <button mat-raised-button color="accent" type="button" (click)="cerrarDialog()">Cerrar</button>
+    </div>
+</form>

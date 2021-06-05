@@ -1,0 +1,27 @@
+<mat-card>
+    Ingrese datos del tipo de persona
+</mat-card>
+
+<form class="contendor" [formGroup]="form2" #formTipoPersonaEdicion="ngForm" (ngSubmit)="operar()">
+    <div [hidden]="true">
+        <mat-form-field>
+            <input matInput placeholder="Id" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field>
+        <input matInput placeholder="Descripcion" required formControlName="descripcion">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="formTipoPersonaEdicion.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+
+    <button mat-raised-button color="accent" routerLink='/tipopersona' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+
+
+</form>

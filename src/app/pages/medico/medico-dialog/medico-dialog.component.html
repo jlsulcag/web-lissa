@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Médicos/Especialistas</h1>
+<form id="form" [formGroup]="form" #formMedico = "ngForm" (ngSubmit)="operar()">
+    <div mat-dialog-content>
+        <div [hidden]="true">
+            <mat-form-field>
+                <input matInput formControlName="idMedico">
+            </mat-form-field>            
+        </div>
+        <mat-form-field>
+            <mat-label>Nombres y Apellidos</mat-label>
+            <input type="text" required
+                placeholder="Nombres y Apellidos"
+                aria-label="Number"
+                matInput
+                [formControl]="myControlPersona"
+                [matAutocomplete]="autoPersona"
+                formControlName="persona">
+            <mat-autocomplete #autoPersona="matAutocomplete" [displayWith]="displayFn" (optionSelected)="seleccionar($event)">
+                <mat-option *ngFor="let p of filteredOptions | async" [value]="p">
+                    {{p.nombres}} {{p.apellidoPaterno}} {{p.apellidoMaterno}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Código Colegiatura</mat-label>
+            <input matInput placeholder="CMP-001" formControlName="colegiatura" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Especialidad</mat-label>
+            <mat-select formControlName="especialidad" required [compareWith] = "compareFn" [(ngModel)] ="selectedEspecialidad">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let obj of listEspecialidades" [value]="obj">{{obj.descEspecialidad}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <mat-select formControlName="tipoMedico" required >
+                <mat-option>Ninguno</mat-option>
+                <mat-option value="1">PLANTA</mat-option>
+                <mat-option value="2">EXTERNO</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]='form.invalid'>Guardar</button>
+        <button mat-raised-button color="accent" type="button" (click)="cerrarDialog()">Cerrar</button>
+    </div>
+</form>

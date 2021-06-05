@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+}
+
+.button-row button,
+.button-row a {
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+.row_input{
+    width: 90%;
+    margin: 5px;
+    text-align: left;
+}
+
+.mat-form-field{    
+    font-size: 14px;
+    width: 90%;
+}
+
+
+
+

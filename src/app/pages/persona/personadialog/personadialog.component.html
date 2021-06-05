@@ -1,0 +1,96 @@
+<h1 mat-dialog-title>Personas</h1>
+<form class="form-container" [formGroup]="form" #formPersona="ngForm" (ngSubmit)="operar()" autocomplete="off" >
+    <div mat-dialog-content>
+        <mat-grid-list cols="2" rowHeight="60px">
+            <div [hidden]="true">
+                <mat-form-field>
+                    <input matInput placeholder="ID" required formControlName="idPersona">
+                </mat-form-field>
+            </div>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Nombres</mat-label>
+                    <input matInput placeholder="Nombres" required formControlName="nombres">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Apellido Paterno</mat-label>
+                    <input matInput placeholder="Apellido Paterno" required formControlName="apellidoPaterno">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Apellido Materno</mat-label>
+                    <input matInput placeholder="Apellido Materno" required formControlName="apellidoMaterno">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Nro Doc</mat-label>
+                    <input matInput placeholder="Nro Doc" required formControlName="numeroDocumentoIdentidad" 
+                    maxlength="8" pattern="[0-9]*">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Dirección</mat-label>
+                    <input matInput placeholder="Dirección" formControlName="direccion" >
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput placeholder="Teléfono" formControlName="telefono">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput placeholder="correo@miempresa.com" formControlName="correoElectronico" 
+                    >
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Tipo Persona</mat-label>
+                    <mat-select formControlName="tipoPersona" required >
+                        <mat-option>Ninguno</mat-option>
+                        <mat-option *ngFor="let tp of listTipoPersona" [value]="tp">
+                            {{tp.descripcion}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Estado Civil</mat-label>
+                    <mat-select formControlName="estadoCivil" required>
+                        <mat-option>Ninguno</mat-option>
+                        <mat-option *ngFor="let ec of listEstadoCivil" [value]="ec">
+                            {{ec.descripcion}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Tipo Documento</mat-label>
+                    <mat-select formControlName="tipoDocumento" required [(ngModel)]="tdselected">
+                        <mat-option>Ninguno</mat-option>
+                        <mat-option *ngFor="let td of listTipoDoc" [value]="td">
+                            {{td.abreviatura}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]='form.invalid'>Guardar</button>
+        <button mat-raised-button color="accent" type="button" (click)="cerrarDialog()">Cerrar</button>
+    </div>
+
+</form>

@@ -1,0 +1,106 @@
+<div class="container">
+    <mat-toolbar>Admisión</mat-toolbar>
+    <div class="div-border">
+        <mat-grid-list [cols]="breakpoint" rowHeight="60px" (window:resize)="onResize($event)">
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Tipo Documento</mat-label>
+                    <mat-select formControlName="tipoDocumento">
+                        <mat-option>Ninguno</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Número de Documento</mat-label>
+                    <input matInput placeholder="Número de documento" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Nombres y Apellidos</mat-label>
+                    <input matInput placeholder="Nombres y Apellidos" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <div class="div-border">
+        <mat-grid-list [cols]="breakpoint" rowHeight="60px" (window:resize)="onResize($event)">
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Nombres y Apellidos</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Número de Documento</mat-label>
+                    <input matInput >
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div class="btn-search">
+                    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                      <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </mat-grid-tile>
+            
+        </mat-grid-list>
+    </div>
+
+    <div class="div-border">
+        <mat-grid-list cols="3" rowHeight="60px">
+            <div class="item item-1" fxFlex="15%">Item 1</div>
+            <div class="item item-2" fxFlex="20%" fxFlexOrder="3">Item 2</div>
+            <div class="item item-3" fxFlex>Item 3</div>
+
+            <mat-grid-tile fxFlex="45%">
+                <mat-form-field >
+                    <mat-label>Nombres y Apellidos</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile fxFlex="45%">
+                <mat-form-field>
+                    <mat-label>Número de Documento</mat-label>
+                    <input matInput >
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile fxFlex="10%">
+                <div class="example-button-container">
+                    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                      <mat-icon>search</mat-icon>
+                    </button>
+                  </div>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+        
+    </div>
+
+    <div class="div-border">
+        <mat-form-field fxFlex="45%">
+            <mat-label>Nombres y Apellidos</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field fxFlex="45%">
+            <mat-label>Número de Documento</mat-label>
+            <input matInput >
+        </mat-form-field>
+        <div fxFlex="10%">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+    </div>
+
+
+
+    
+
+
+
+
+</div>

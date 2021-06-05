@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-header></mat-card-header>
+
+    <mat-card-content>
+        <form class="form-container" [formGroup]="form" #formPersona="ngForm">
+    
+            <div [hidden]="true">
+                <mat-form-field>
+                    <input matInput placeholder="ID" required formControlName="id">
+                </mat-form-field>
+            </div>
+        
+            <mat-form-field>
+                <input matInput placeholder="NOMBRES" required formControlName="nombres">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="APELLIDO PATERNO" required formControlName="apePaterno">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="APELLIDO MATERNO" required formControlName="apeMaterno">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="DOCUMENTO ID" required formControlName="docId">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="DIRECCIÓN" formControlName="direccion">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="TELEFONO" formControlName="telefono">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="CORREO ELECTRÓNICO" formControlName="correo">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="LUGAR DE NACIMIENTO" formControlName="lugarNac">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="LUGAR PROCEDENCIA" formControlName="lugarProc">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="GRADO DE INSTRUCCIÓN" formControlName="gradoint">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="OCUPACIÓN" formControlName="ocupacion">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+</mat-card>
+
