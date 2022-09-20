@@ -1,4 +1,4 @@
-export const HOST = "http://localhost:8082/sc-app-ws-lissa";
+export const HOST = "http://localhost:8080/sc-app-ws-lissa";
 export const STATUS_ENABLE = 1;
 export const STATUS_DISABLE = 0;
 

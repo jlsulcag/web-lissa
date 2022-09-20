@@ -1,6 +1,6 @@
 
 import { NgModule } from '@angular/core';
-import {MatTableModule, MatToolbarModule, MatPaginatorModule, MatIconModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatInputModule, MatCardModule, MatSlideToggleModule, MatSnackBarModule, MatSidenavModule, MatMenuModule, MatDividerModule, MatDialogModule, MatListModule, MatSelectModule} from '@angular/material';
+import {MatTableModule, MatToolbarModule, MatPaginatorModule, MatIconModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatInputModule, MatCardModule, MatSlideToggleModule, MatSnackBarModule, MatSidenavModule, MatMenuModule, MatDividerModule, MatDialogModule, MatListModule, MatSelectModule, MatTabsModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +31,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatListModule,
     MatSelectModule,
     MatGridListModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTabsModule
   ], 
   exports: [
     MatTableModule,
@@ -54,7 +55,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatListModule,
     MatSelectModule,
     MatGridListModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }

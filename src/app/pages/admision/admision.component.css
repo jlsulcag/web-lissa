@@ -4,19 +4,19 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 10px;
-    right: 10px;
+    left: 15px;
+    right: 15px;
 }
 
 .div-border{
-    border: 2px solid #dbdbdb;
+    border: 1px solid #dbdbdb;
     border-radius: 10px 10px;
     margin-top: 10px;
 }
 
 .mat-form-field{
     font-size: 14px;
-    width: 90%;
+    width: 100%;
 }
 
 .container-search{

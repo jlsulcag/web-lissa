@@ -1,27 +1,122 @@
-<div class="container">
-    <mat-toolbar>Admisión</mat-toolbar>
-    <div class="div-border">
-        <mat-grid-list [cols]="breakpoint" rowHeight="60px" (window:resize)="onResize($event)">
-            <mat-grid-tile>
-                <mat-form-field>
-                    <mat-label>Tipo Documento</mat-label>
-                    <mat-select formControlName="tipoDocumento">
-                        <mat-option>Ninguno</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </mat-grid-tile>
+<div class="container-fluid">
+    <!-- <mat-toolbar>Admisión</mat-toolbar> -->
+    <div class="titulo">
+        Admisión
+    </div>
+    <div class="row search">
+        <div class="col-12 col-lg-8 col-xl-8">
+            <mat-form-field appearance="outline">
+                <mat-label>Búsqueda</mat-label>
+                <input matInput placeholder="Ingrese el número de documento / Apellidos y nombres" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-2 col-xl-2">
+            <button class="btn-generic" mat-flat-button color="primary">Nuevo</button>
+        </div>
+        <div class="col-12 col-lg-2 col-xl-2">
+            <button class="btn-generic" mat-flat-button color="primary">Generar HC</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Tipo de documento</mat-label>
+                <select matNativeControl>
+                    <option value="volvo">DNI</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Número de Documento</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Apellidos y Nombres</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Edad</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Historia Clínica</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Ingreso por</mat-label>
+                <select matNativeControl>
+                    <option value="volvo">Consulta</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Tipo de paciente</mat-label>
+                <select matNativeControl>
+                    <option value="volvo">Particular</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-tab-group>
+                <mat-tab label="Atenciones"> Historial </mat-tab>
+                <mat-tab label="Fondo de Solidaridad"> FPS</mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+    <div class="row section justify-content-end">
+        <div class="col-12 col-lg-2 col-xl-2">
+            <button class="btn-generic" mat-flat-button color="primary">Guardar</button>
+        </div>
+        <div class="col-12 col-lg-2 col-xl-2">
+            <button class="btn-generic" mat-flat-button color="accent">Cancelar</button>
+        </div>
+    </div>
+    <!-- <div class="div-border">
+        <mat-grid-list [cols]="breakpoint" rowHeight="60px" (window:resize)="onResize($event)">            
             <mat-grid-tile>
                 <mat-form-field>
                     <mat-label>Número de Documento</mat-label>
-                    <input matInput placeholder="Número de documento" autocomplete="off">
+                    <input matInput placeholder="Ingrese el número de documento" autocomplete="off">
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-form-field>
-                    <mat-label>Nombres y Apellidos</mat-label>
-                    <input matInput placeholder="Nombres y Apellidos" autocomplete="off">
+                    <mat-label>Apellidos y Nombres</mat-label>
+                    <input matInput placeholder="Ingrese Apellidos y Nombres" autocomplete="off">
                 </mat-form-field>
             </mat-grid-tile>
+            <mat-grid-tile>
+                <button mat-flat-button color="primary">Nuevo</button>
+            </mat-grid-tile>
+            
         </mat-grid-list>
     </div>
 
@@ -94,11 +189,11 @@
               <mat-icon>search</mat-icon>
             </button>
           </div>
-    </div>
+    </div> -->
 
 
 
-    
+
 
 
 
